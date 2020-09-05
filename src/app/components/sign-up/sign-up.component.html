@@ -1,1 +1,13 @@
-<p>sign-up works!</p>
+<p>
+    Form Status: {{ signUpForm.status }}
+  </p>
+
+  <form [formGroup]="signUpForm" novalidate (ngSubmit)="signUp()">   
+      <div class="example-container">
+        <mat-form-field appearance="fill">
+          <mat-label>Enter your email</mat-label>
+          <input matInput placeholder="pat@example.com" formControlName="email" required>
+          <mat-error *ngIf="signUpForm.get('email').invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+      </div>
+  </form>
