@@ -1,13 +1,25 @@
 <p>
-    Form Status: {{ signUpForm.status }}
+    Form Status: {{ displayCurrentValue() }}
   </p>
 
   <form [formGroup]="signUpForm" novalidate (ngSubmit)="signUp()">   
-      <div class="example-container">
+      <div class="sign-up-container">
         <mat-form-field appearance="fill">
           <mat-label>Enter your email</mat-label>
-          <input matInput placeholder="pat@example.com" formControlName="email" required>
-          <mat-error *ngIf="signUpForm.get('email').invalid">{{getErrorMessage()}}</mat-error>
+          <input matInput formControlName="email" required>
+          <mat-error *ngIf="signUpForm.get('email').invalid">{{getErrorMessage('email')}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Enter your username</mat-label>
+          <input matInput formControlName="username" required>
+          <mat-error *ngIf="signUpForm.get('username').invalid">{{getErrorMessage('username')}}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Enter your password</mat-label>
+          <input matInput formControlName="password" required>
+          <mat-error *ngIf="signUpForm.get('password').invalid">{{getErrorMessage('password')}}</mat-error>
         </mat-form-field>
       </div>
   </form>
