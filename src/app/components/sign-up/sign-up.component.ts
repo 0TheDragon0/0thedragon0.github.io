@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Validators } from '@angular/forms';
+import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -9,7 +10,10 @@ import { Validators } from '@angular/forms';
 })
 export class SignUpComponent implements OnInit {
 
-  constructor(private fb: FormBuilder) { }
+  constructor(
+    private fb: FormBuilder,
+    protected authenticationService: AuthenticationService
+  ) { }
 
   ngOnInit(): void {
   }
@@ -21,7 +25,8 @@ export class SignUpComponent implements OnInit {
       '',
       [
         Validators.required,
-        Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$') //this is for the letters (both uppercase and lowercase) and numbers validation
+        Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$'), //this is for the letters (both uppercase and lowercase) and numbers validation
+        Validators.minLength(8)
       ]
     ]
   });
@@ -45,6 +50,12 @@ export class SignUpComponent implements OnInit {
 
   signUp() {
     console.log('user clicked sign up button');
+    console.log(this.signUpForm.value);
+    let signUpInfo=this.signUpForm.value;
+    this.authenticationService.register(signUpInfo).subscribe(
+      res => console.log('registration succeded'),
+      err => console.log('registration failed')
+    );
   }
 
   displayCurrentValue() {

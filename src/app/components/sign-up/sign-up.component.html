@@ -1,27 +1,23 @@
-<p>
-    Form Status: {{ displayCurrentValue() }}
-  </p>
-
-  <form [formGroup]="signUpForm" novalidate>   
+  <form [formGroup]="signUpForm" novalidate (ngSubmit)="signUp()" class="sign-up-form">   
       <div class="sign-up-container">
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="outline">
           <mat-label>Enter your email</mat-label>
           <input matInput formControlName="email" required>
           <mat-error *ngIf="signUpForm.get('email').invalid">{{getErrorMessage('email')}}</mat-error>
         </mat-form-field>
 
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="outline">
           <mat-label>Enter your username</mat-label>
           <input matInput formControlName="username" required>
           <mat-error *ngIf="signUpForm.get('username').invalid">{{getErrorMessage('username')}}</mat-error>
         </mat-form-field>
 
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="outline">
           <mat-label>Enter your password</mat-label>
-          <input matInput formControlName="password" required>
+          <input type="password" matInput formControlName="password" required>
           <mat-error *ngIf="signUpForm.get('password').invalid">{{getErrorMessage('password')}}</mat-error>
         </mat-form-field>
 
-        <button mat-stroked-button color="primary" (click)="signUp()">Sign up</button>
+        <button mat-stroked-button color="primary" type="submit" [disabled]="!signUpForm.valid" class="submit-button">Sign up</button>
       </div>
   </form>
