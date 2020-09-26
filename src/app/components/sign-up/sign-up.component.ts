@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-sign-up',
@@ -12,7 +13,8 @@ export class SignUpComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    protected authenticationService: AuthenticationService
+    protected authenticationService: AuthenticationService,
+    private _snackBar: MatSnackBar
   ) { }
 
   ngOnInit(): void {
@@ -53,12 +55,27 @@ export class SignUpComponent implements OnInit {
     console.log(this.signUpForm.value);
     let signUpInfo=this.signUpForm.value;
     this.authenticationService.register(signUpInfo).subscribe(
-      res => console.log('registration succeded'),
-      err => console.log('registration failed')
+      res => {
+        if(res) {
+          this.openSnackBar('Registration succeeded! :D', 'success-snack-bar');
+        } else {
+          this.openSnackBar('Something went wrong /:', 'error-snack-bar')
+        }
+      },
+      err => this.openSnackBar('Something went wrong /:', 'error-snack-bar')
     );
   }
 
   displayCurrentValue() {
     return JSON.stringify(this.signUpForm.value);
+  }
+
+  openSnackBar(message: string, className: string) {
+    this._snackBar.open(message, '', {
+      duration: 60000,
+      horizontalPosition: 'center',
+      verticalPosition: 'top',
+      panelClass: className
+    });
   }
 }

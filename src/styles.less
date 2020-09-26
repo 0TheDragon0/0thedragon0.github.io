@@ -2,3 +2,15 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+// Start: overiding material styles
+.mat-snack-bar-container {
+    &.success-snack-bar {
+        background-color: #32C468 !important;
+    }
+    &.error-snack-bar {
+        background-color: #FF2525 !important;
+    }
+    color: white !important;
+}
+// End: overiding material styles
