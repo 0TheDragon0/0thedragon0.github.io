@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { SignUpInfo } from 'src/app/components/sign-up/sign-up.interface';
@@ -8,8 +9,8 @@ import { SignUpInfo } from 'src/app/components/sign-up/sign-up.interface';
 export class AuthenticationEndpointService {
 
 
-  constructor() { }
-  register(signUpInfo: SignUpInfo): Observable<boolean> {
-    return of(true)
+  constructor(private http: HttpClient) { }
+  register(signUpInfo: SignUpInfo): Observable<Object> {
+    return this.http.post("http://localhost:3000/api/auth/register-login", signUpInfo)
   }
 }

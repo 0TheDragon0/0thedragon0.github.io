@@ -56,6 +56,7 @@ export class SignUpComponent implements OnInit {
     let signUpInfo=this.signUpForm.value;
     this.authenticationService.register(signUpInfo).subscribe(
       res => {
+        console.log(res);
         if(res) {
           this.openSnackBar('Registration succeeded! :D', 'success-snack-bar');
         } else {

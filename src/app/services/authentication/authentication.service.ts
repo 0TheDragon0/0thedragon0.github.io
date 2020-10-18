@@ -13,7 +13,7 @@ export class AuthenticationService {
     protected authenticationEndPointService: AuthenticationEndpointService
   ) { }
 
-  register(signUpInfo: SignUpInfo): Observable<boolean> {
+  register(signUpInfo: SignUpInfo): Observable<Object> {
     return this.authenticationEndPointService.register(signUpInfo).pipe(
       catchError(err => of(false))
     );
