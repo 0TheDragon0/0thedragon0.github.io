@@ -18,6 +18,6 @@
           <mat-error *ngIf="signUpForm.get('password').invalid">{{getErrorMessage('password')}}</mat-error>
         </mat-form-field>
 
-        <button mat-stroked-button color="primary" type="submit" [disabled]="!signUpForm.valid" class="submit-button">Sign up</button>
+        <button mat-stroked-button color="primary" type="submit" [disabled]="!signUpForm.valid || loading" class="submit-button">Sign up</button>
       </div>
   </form>

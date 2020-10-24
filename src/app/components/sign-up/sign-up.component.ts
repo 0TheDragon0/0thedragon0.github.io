@@ -11,6 +11,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class SignUpComponent implements OnInit {
 
+loading = false; 
+
   constructor(
     private fb: FormBuilder,
     protected authenticationService: AuthenticationService,
@@ -51,19 +53,18 @@ export class SignUpComponent implements OnInit {
   }
 
   signUp() {
-    console.log('user clicked sign up button');
-    console.log(this.signUpForm.value);
+    this.loading = true;
     let signUpInfo=this.signUpForm.value;
     this.authenticationService.register(signUpInfo).subscribe(
       res => {
-        console.log(res);
         if(res) {
           this.openSnackBar('Registration succeeded! :D', 'success-snack-bar');
         } else {
           this.openSnackBar('Something went wrong /:', 'error-snack-bar')
         }
       },
-      err => this.openSnackBar('Something went wrong /:', 'error-snack-bar')
+      err => this.openSnackBar('Something went wrong /:', 'error-snack-bar'),
+      () => this.loading = false
     );
   }
 
@@ -73,7 +74,7 @@ export class SignUpComponent implements OnInit {
 
   openSnackBar(message: string, className: string) {
     this._snackBar.open(message, '', {
-      duration: 60000,
+      duration: 3000,
       horizontalPosition: 'center',
       verticalPosition: 'top',
       panelClass: className

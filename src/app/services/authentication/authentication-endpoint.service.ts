@@ -11,6 +11,8 @@ export class AuthenticationEndpointService {
 
   constructor(private http: HttpClient) { }
   register(signUpInfo: SignUpInfo): Observable<Object> {
-    return this.http.post("http://localhost:3000/api/auth/register-login", signUpInfo)
+    const headers = { 'content-type': 'application/json'};
+    const body=JSON.stringify(signUpInfo);
+    return this.http.post("http://localhost:3000/api/auth/register-login", body,{'headers':headers, observe: 'response'});
   }
 }
