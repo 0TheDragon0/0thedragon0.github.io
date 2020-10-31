@@ -24,7 +24,7 @@ loading = false;
 
   signUpForm = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
-    username: ['', [Validators.required, Validators.minLength(3)]],
+    name: ['', [Validators.required, Validators.minLength(3)]],
     password: [
       '',
       [
@@ -43,8 +43,8 @@ loading = false;
       return this.signUpForm.controls.email.hasError('email') ? 'Not a valid email' : '';
     }
 
-    if (controlName == 'username') {
-      return this.signUpForm.controls.username.hasError('minlength') ? 'Minimum length 3 characters' : '';
+    if (controlName == 'name') {
+      return this.signUpForm.controls.name.hasError('minlength') ? 'Minimum length 3 characters' : '';
     }
 
     if (controlName == 'password') {
