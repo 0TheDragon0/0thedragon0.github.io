@@ -1,0 +1,21 @@
+<form [formGroup]="loginForm" novalidate (ngSubmit)="login()" class="sign-up-form">
+    <div class="sign-up-container">
+      <mat-form-field appearance="outline">
+        <mat-label>Enter your email</mat-label>
+        <input matInput formControlName="email" required>
+        <mat-error *ngIf="loginForm.get('email').invalid">{{getErrorMessage('email')}}</mat-error>
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline">
+        <mat-label>Enter your password</mat-label>
+        <input type="password" matInput formControlName="password" required>
+        <mat-error *ngIf="loginForm.get('password').invalid">{{getErrorMessage('password')}}</mat-error>
+      </mat-form-field>
+  
+      <div class="buttons-wrapper">
+        <button mat-stroked-button color="primary" type="submit" [disabled]="!loginForm.valid || loading"
+          class="submit-button">Login</button>
+        <a mat-stroked-button href="https://www.google.com/" target="_blank">Go back</a>
+      </div>
+    </div>
+  </form>

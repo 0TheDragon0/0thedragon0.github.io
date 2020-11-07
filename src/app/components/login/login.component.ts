@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
-import { Validators } from '@angular/forms';
-import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
+import { FormBuilder, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 
 @Component({
-  selector: 'app-sign-up',
-  templateUrl: './sign-up.component.html',
-  styleUrls: ['./sign-up.component.less']
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.less']
 })
-export class SignUpComponent implements OnInit {
+export class LoginComponent implements OnInit {
 
   loading = false;
 
@@ -22,9 +21,8 @@ export class SignUpComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  signUpForm = this.fb.group({
+  loginForm = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
-    name: ['', [Validators.required, Validators.minLength(3)]],
     password: [
       '',
       [
@@ -36,29 +34,26 @@ export class SignUpComponent implements OnInit {
   });
 
   getErrorMessage(controlName: string): string {
-    if (this.signUpForm.controls[controlName].hasError('required')) {
+    if (this.loginForm.controls[controlName].hasError('required')) {
       return 'You must enter a value';
     }
     if (controlName == 'email') {
-      return this.signUpForm.controls.email.hasError('email') ? 'Not a valid email' : '';
-    }
-
-    if (controlName == 'name') {
-      return this.signUpForm.controls.name.hasError('minlength') ? 'Minimum length 3 characters' : '';
+      return this.loginForm.controls.email.hasError('email') ? 'Not a valid email' : '';
     }
 
     if (controlName == 'password') {
-      return this.signUpForm.controls.password.hasError('pattern') ? 'Minimum 8 characters with uppercase and number' : '';
+      return this.loginForm.controls.password.hasError('pattern') ? 'Minimum 8 characters with uppercase and number' : '';
     }
   }
 
-  signUp() {
+  login() {
     this.loading = true;
-    let signUpInfo = this.signUpForm.value;
-    this.authenticationService.register(signUpInfo).subscribe(
+    let loginInfo = this.loginForm.value;
+    this.authenticationService.register(loginInfo).subscribe(
       res => {
         if (res) {
-          this.openSnackBar('Registration succeeded! :D', 'success-snack-bar');
+          //To do: Re-direct to content
+          this.openSnackBar('Login succeeded! :D', 'success-snack-bar');
         } else {
           this.openSnackBar('Something went wrong /:', 'error-snack-bar')
         }
