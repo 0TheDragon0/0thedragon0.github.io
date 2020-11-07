@@ -1,23 +1,27 @@
-  <form [formGroup]="signUpForm" novalidate (ngSubmit)="signUp()" class="sign-up-form">   
-      <div class="sign-up-container">
-        <mat-form-field appearance="outline">
-          <mat-label>Enter your email</mat-label>
-          <input matInput formControlName="email" required>
-          <mat-error *ngIf="signUpForm.get('email').invalid">{{getErrorMessage('email')}}</mat-error>
-        </mat-form-field>
+<form [formGroup]="signUpForm" novalidate (ngSubmit)="signUp()" class="sign-up-form">
+  <div class="sign-up-container">
+    <mat-form-field appearance="outline">
+      <mat-label>Enter your email</mat-label>
+      <input matInput formControlName="email" required>
+      <mat-error *ngIf="signUpForm.get('email').invalid">{{getErrorMessage('email')}}</mat-error>
+    </mat-form-field>
 
-        <mat-form-field appearance="outline">
-          <mat-label>Enter your username</mat-label>
-          <input matInput formControlName="name" required>
-          <mat-error *ngIf="signUpForm.get('name').invalid">{{getErrorMessage('name')}}</mat-error>
-        </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Enter your username</mat-label>
+      <input matInput formControlName="name" required>
+      <mat-error *ngIf="signUpForm.get('name').invalid">{{getErrorMessage('name')}}</mat-error>
+    </mat-form-field>
 
-        <mat-form-field appearance="outline">
-          <mat-label>Enter your password</mat-label>
-          <input type="password" matInput formControlName="password" required>
-          <mat-error *ngIf="signUpForm.get('password').invalid">{{getErrorMessage('password')}}</mat-error>
-        </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Enter your password</mat-label>
+      <input type="password" matInput formControlName="password" required>
+      <mat-error *ngIf="signUpForm.get('password').invalid">{{getErrorMessage('password')}}</mat-error>
+    </mat-form-field>
 
-        <button mat-stroked-button color="primary" type="submit" [disabled]="!signUpForm.valid || loading" class="submit-button">Sign up</button>
-      </div>
-  </form>
+    <div class="buttons-wrapper">
+      <button mat-stroked-button color="primary" type="submit" [disabled]="!signUpForm.valid || loading"
+        class="submit-button">Sign up</button>
+      <a mat-stroked-button href="https://www.google.com/" target="_blank">Go back</a>
+    </div>
+  </div>
+</form>
