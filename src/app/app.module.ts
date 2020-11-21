@@ -12,12 +12,14 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ContentHomepageComponent } from './components/content-homepage/content-homepage.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SignUpComponent,
-    LoginComponent
+    LoginComponent,
+    ContentHomepageComponent
   ],
   imports: [
     BrowserModule,
