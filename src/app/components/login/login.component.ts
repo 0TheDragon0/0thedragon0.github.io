@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 
 @Component({
@@ -15,7 +16,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     protected authenticationService: AuthenticationService,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -53,6 +55,7 @@ export class LoginComponent implements OnInit {
       res => {
         if (res) {
           //To do: Re-direct to content
+          this.router.navigate(['/', 'sign-up']);
           this.openSnackBar('Login succeeded! :D', 'success-snack-bar');
         } else {
           this.openSnackBar('Something went wrong /:', 'error-snack-bar')
