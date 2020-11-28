@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-content-homepage',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContentHomepageComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router
+    ) { }
 
   ngOnInit(): void {
   }
 
+  contribute() {
+    console.log("Contribute");
+    this.router.navigate(['/', 'contribute']);
+  }
+
+  browse() {
+    console.log("Browse Content");
+    this.router.navigate(['/', 'browse-content']);
+  }
 }

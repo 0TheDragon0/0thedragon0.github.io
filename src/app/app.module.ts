@@ -13,13 +13,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './components/login/login.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ContentHomepageComponent } from './components/content-homepage/content-homepage.component';
+import { ContributeComponent } from './components/contribute/contribute.component';
+import { BrowseContentComponent } from './components/browse-content/browse-content.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SignUpComponent,
     LoginComponent,
-    ContentHomepageComponent
+    ContentHomepageComponent,
+    ContributeComponent,
+    BrowseContentComponent
   ],
   imports: [
     BrowserModule,
