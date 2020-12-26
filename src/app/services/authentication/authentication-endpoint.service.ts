@@ -11,6 +11,7 @@ export class AuthenticationEndpointService {
 registerLoginEndpoint = `${API_URL}auth/register-login`;
 
   constructor(private http: HttpClient) { }
+  
   register(signUpInfo: SignUpInfo): Observable<Object> {
     const headers = { 'content-type': 'application/json'};
     const body=JSON.stringify(signUpInfo);
