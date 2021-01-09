@@ -1,1 +1,1 @@
-export const API_URL = 'http://ari-edu.eu-4.evennode.com/api/';
+export const API_URL = 'https://ari-edu.eu-4.evennode.com/api/';
