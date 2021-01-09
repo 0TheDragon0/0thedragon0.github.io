@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "ari-edu": {
+      "hosting": {
+        "ari-edu": [
+          "ari-edu"
+        ]
+      }
+    }
+  }
+}
