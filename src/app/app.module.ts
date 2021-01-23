@@ -15,6 +15,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ContentHomepageComponent } from './components/content-homepage/content-homepage.component';
 import { ContributeComponent } from './components/contribute/contribute.component';
 import { BrowseContentComponent } from './components/browse-content/browse-content.component';
+import { TopNavigationComponent } from './components/top-navigation/top-navigation.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { BrowseContentComponent } from './components/browse-content/browse-conte
     LoginComponent,
     ContentHomepageComponent,
     ContributeComponent,
-    BrowseContentComponent
+    BrowseContentComponent,
+    TopNavigationComponent
   ],
   imports: [
     BrowserModule,
