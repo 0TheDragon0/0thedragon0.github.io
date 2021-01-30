@@ -1,1 +1,4 @@
-<router-outlet></router-outlet>
+<div class="content-wrapper">
+    <app-top-navigation *ngIf="authenticationService.userLoggedIn"></app-top-navigation>
+    <router-outlet></router-outlet>
+</div>

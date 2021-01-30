@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
     }
   }
 
- /** login() {
+login() {
     this.loading = true;
     let loginInfo = this.loginForm.value;
     this.authenticationService.register(loginInfo).subscribe(
@@ -65,10 +65,6 @@ export class LoginComponent implements OnInit {
       () => this.loading = false
     );
   }
-**/
-login(){
-  this.router.navigate(['/', 'content-home']);
-}
 
   openSnackBar(message: string, className: string) {
     this._snackBar.open(message, '', {

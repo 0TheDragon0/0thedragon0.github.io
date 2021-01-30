@@ -9,6 +9,7 @@ import { HttpResponse } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AuthenticationService {
+  userLoggedIn = false;
 
   constructor(
     protected authenticationEndPointService: AuthenticationEndpointService
@@ -17,7 +18,13 @@ export class AuthenticationService {
   register(signUpInfo: SignUpInfo): Observable<boolean> {
     return this.authenticationEndPointService.register(signUpInfo).pipe(
       map((res: HttpResponse<Object>) =>{
-         if (res.status == 200) { return true } else { return false }}),
+         if (res.status == 200) {
+          this.userLoggedIn = true; 
+          return true;
+        } else { 
+          this.userLoggedIn = false;
+          return false;
+        }}),
       catchError(err => of(false))
     );
   }
