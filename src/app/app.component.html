@@ -1,4 +1,6 @@
 <div class="content-wrapper">
     <app-top-navigation *ngIf="authenticationService.userLoggedIn"></app-top-navigation>
-    <router-outlet></router-outlet>
+   <div class="main-content">
+       <router-outlet></router-outlet>
+   </div>
 </div>

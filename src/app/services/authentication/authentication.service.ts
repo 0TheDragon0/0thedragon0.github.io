@@ -9,7 +9,7 @@ import { HttpResponse } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AuthenticationService {
-  userLoggedIn = false;
+  userLoggedIn = true;
 
   constructor(
     protected authenticationEndPointService: AuthenticationEndpointService
