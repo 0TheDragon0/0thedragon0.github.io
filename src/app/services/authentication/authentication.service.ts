@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class AuthenticationService {
-  userLoggedIn = true;
+  userLoggedIn = false;
 
   constructor(
     protected authenticationEndPointService: AuthenticationEndpointService,

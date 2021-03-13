@@ -74,4 +74,8 @@ login() {
       panelClass: className
     });
   }
+
+  isButtonDisabled() {
+    return !this.loginForm.valid || this.loading;
+  }
 }
