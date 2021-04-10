@@ -9,12 +9,24 @@ import { API_URL } from 'src/app/config';
 })
 export class AuthenticationEndpointService {
 registerLoginEndpoint = `${API_URL}auth/register-login`;
+logoutEndpoint = `${API_URL}auth/logout`;
+isAuthenticatedEndpoint = `${API_URL}auth/is-authenticated`;
 
   constructor(private http: HttpClient) { }
   
   register(signUpInfo: SignUpInfo): Observable<Object> {
     const headers = { 'content-type': 'application/json'};
     const body=JSON.stringify(signUpInfo);
-    return this.http.post(this.registerLoginEndpoint, body,{'headers':headers, observe: 'response'});
+    return this.http.post(this.registerLoginEndpoint, body, {'headers':headers, observe: 'response'});
+  }
+
+  logout(): Observable<Object> {
+    const headers = { 'content-type': 'application/json'};
+    return this.http.post(this.logoutEndpoint, null, {'headers':headers, observe: 'response'});
+  }
+
+  isAuthenticated(): Observable<Object> {
+    const headers = { 'content-type': 'application/json'};
+    return this.http.post(this.isAuthenticatedEndpoint, null, {'headers':headers, observe: 'response'});
   }
 }

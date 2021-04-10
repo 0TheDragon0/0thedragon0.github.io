@@ -37,4 +37,8 @@ export class AuthenticationService {
     this.userLoggedIn = false;
     this.router.navigate(['/', 'login']);
   }
+
+  isAuthenticated(): boolean {
+    return this.userLoggedIn;
+  }
 }
