@@ -6,7 +6,6 @@ import { catchError, map } from 'rxjs/operators';
 import { HttpResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { error } from '@angular/compiler/src/util';
 
 @Injectable({
   providedIn: 'root'

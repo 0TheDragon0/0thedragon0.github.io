@@ -5,17 +5,19 @@ import { ContentHomepageComponent } from './components/content-homepage/content-
 import { ContributeComponent } from './components/contribute/contribute.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { AuthGuardService } from './services/guards/auth-guard.service';
 
 const routes: Routes = [
     { path: '', redirectTo: '/login', pathMatch: 'full' },
     { path: 'sign-up', component: SignUpComponent },
     { path: 'login', component: LoginComponent },
-    { path: 'content-home', component: ContentHomepageComponent },
-    { path: 'contribute', component: ContributeComponent },
-    { path: 'browse-content', component: BrowseContentComponent }
+    { path: 'content-home', component: ContentHomepageComponent, canActivate: [AuthGuardService] },
+    { path: 'contribute', component: ContributeComponent, canActivate: [AuthGuardService] },
+    { path: 'browse-content', component: BrowseContentComponent, canActivate: [AuthGuardService] }
 ];
 
 @NgModule({
+    providers: [AuthGuardService],
     imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule]
 })
