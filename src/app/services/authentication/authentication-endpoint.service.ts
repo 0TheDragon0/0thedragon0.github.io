@@ -27,6 +27,6 @@ isAuthenticatedEndpoint = `${API_URL}auth/is-authenticated`;
 
   isAuthenticated(): Observable<Object> {
     const headers = { 'content-type': 'application/json'};
-    return this.http.get(this.isAuthenticatedEndpoint, {'headers':headers, observe: 'response'});
+    return this.http.post(this.isAuthenticatedEndpoint, null, {'headers':headers, observe: 'response', withCredentials: true});
   }
 }
