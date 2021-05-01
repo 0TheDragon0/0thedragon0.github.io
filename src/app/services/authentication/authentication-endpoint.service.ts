@@ -17,12 +17,12 @@ isAuthenticatedEndpoint = `${API_URL}auth/is-authenticated`;
   register(signUpInfo: SignUpInfo): Observable<Object> {
     const headers = { 'content-type': 'application/json'};
     const body=JSON.stringify(signUpInfo);
-    return this.http.post(this.registerLoginEndpoint, body, {'headers':headers, observe: 'response'});
+    return this.http.post(this.registerLoginEndpoint, body, {'headers':headers, observe: 'response', withCredentials: true});
   }
 
   logout(): Observable<Object> {
     const headers = { 'content-type': 'application/json'};
-    return this.http.post(this.logoutEndpoint, null, {'headers':headers, observe: 'response'});
+    return this.http.post(this.logoutEndpoint, null, {'headers':headers, observe: 'response', withCredentials: true});
   }
 
   isAuthenticated(): Observable<Object> {
