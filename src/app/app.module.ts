@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { MatStepperModule } from '@angular/material/stepper';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
@@ -19,6 +20,7 @@ import { BrowseContentComponent } from './components/browse-content/browse-conte
 import { TopNavigationComponent } from './components/top-navigation/top-navigation.component';
 import { SideNavLeftComponent } from './components/side-nav-left/side-nav-left.component';
 import { AddContentComponent } from './components/add-content/add-content.component';
+
 
 @NgModule({
   declarations: [
@@ -40,6 +42,7 @@ import { AddContentComponent } from './components/add-content/add-content.compon
     FormsModule,
     ReactiveFormsModule,
     MatInputModule,
+    MatStepperModule,
     MatButtonModule,
     MatSnackBarModule,
     MatIconModule,
