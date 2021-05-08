@@ -18,6 +18,7 @@ import { ContributeComponent } from './components/contribute/contribute.componen
 import { BrowseContentComponent } from './components/browse-content/browse-content.component';
 import { TopNavigationComponent } from './components/top-navigation/top-navigation.component';
 import { SideNavLeftComponent } from './components/side-nav-left/side-nav-left.component';
+import { AddContentComponent } from './components/add-content/add-content.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { SideNavLeftComponent } from './components/side-nav-left/side-nav-left.c
     ContributeComponent,
     BrowseContentComponent,
     TopNavigationComponent,
-    SideNavLeftComponent
+    SideNavLeftComponent,
+    AddContentComponent
   ],
   imports: [
     BrowserModule,

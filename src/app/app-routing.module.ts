@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddContentComponent } from './components/add-content/add-content.component';
 import { BrowseContentComponent } from './components/browse-content/browse-content.component';
 import { ContentHomepageComponent } from './components/content-homepage/content-homepage.component';
 import { ContributeComponent } from './components/contribute/contribute.component';
@@ -13,7 +14,8 @@ const routes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'content-home', component: ContentHomepageComponent, canActivate: [AuthGuardService] },
     { path: 'contribute', component: ContributeComponent, canActivate: [AuthGuardService] },
-    { path: 'browse-content', component: BrowseContentComponent, canActivate: [AuthGuardService] }
+    { path: 'browse-content', component: BrowseContentComponent, canActivate: [AuthGuardService] },
+    { path: 'add-content', component: AddContentComponent, canActivate: [AuthGuardService] }
 ];
 
 @NgModule({
