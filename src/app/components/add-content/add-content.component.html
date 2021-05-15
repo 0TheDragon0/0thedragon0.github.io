@@ -7,28 +7,26 @@
         <!-- start: horizontal stepper -->
         <div class="add-content-stepper-wrapper horizontal-stepper">
             <mat-horizontal-stepper #stepper="matHorizontalStepper">
-                <mat-step [stepControl]="firstFormGroup">
-                    <form [formGroup]="firstFormGroup">
+                <form [formGroup]="contentForm">
+                <mat-step [stepControl]="contentForm">
                         <ng-template matStepLabel>Add content</ng-template>
                         <mat-form-field>
-                            <input matInput placeholder="Add content" formControlName="firstCtrl" required>
+                            <input matInput placeholder="Add content" formControlName="contentBody" required>
                         </mat-form-field>
                         <div>
                             <button mat-button matStepperNext>Next</button>
                         </div>
-                    </form>
                 </mat-step>
-                <mat-step [stepControl]="secondFormGroup">
-                    <form [formGroup]="secondFormGroup">
+                <mat-step [stepControl]="contentForm">
+                   
                         <ng-template matStepLabel>Add tags & categories</ng-template>
                         <mat-form-field>
-                            <input matInput placeholder="Add tags & categories" formControlName="secondCtrl" required>
+                            <input matInput placeholder="Add tags & categories" formControlName="tagsCategories" required>
                         </mat-form-field>
                         <div>
                             <button mat-button matStepperPrevious>Back</button>
                             <button mat-button matStepperNext>Next</button>
                         </div>
-                    </form>
                 </mat-step>
                 <mat-step>
                     <ng-template matStepLabel>Preview & Save</ng-template>
@@ -38,6 +36,7 @@
                         <button mat-button (click)="stepper.reset()">Reset</button>
                     </div>
                 </mat-step>
+            </form>
             </mat-horizontal-stepper>
         </div>
         <!-- end: Horizontal stepper -->
@@ -45,22 +44,22 @@
         <!-- start: Vertical stepper -->
         <div class="add-content-stepper-wrapper vertical-stepper">
             <mat-vertical-stepper #stepper="matVerticalStepper">
-                <mat-step [stepControl]="firstFormGroup">
-                    <form [formGroup]="firstFormGroup">
+                <mat-step [stepControl]="contentForm">
+                    <form [formGroup]="contentForm">
                         <ng-template matStepLabel>Add content</ng-template>
                         <mat-form-field>
-                            <input matInput placeholder="Add content" formControlName="firstCtrl" required>
+                            <input matInput placeholder="Add content" formControlName="contentBody" required>
                         </mat-form-field>
                         <div>
                             <button mat-button matStepperNext>Next</button>
                         </div>
                     </form>
                 </mat-step>
-                <mat-step [stepControl]="secondFormGroup">
-                    <form [formGroup]="secondFormGroup">
+                <mat-step [stepControl]="contentForm">
+                    <form [formGroup]="contentForm">
                         <ng-template matStepLabel>Add tags & categories</ng-template>
                         <mat-form-field>
-                            <input matInput placeholder="Add tags & categories" formControlName="secondCtrl" required>
+                            <input matInput placeholder="Add tags & categories" formControlName="tagsCategories" required>
                         </mat-form-field>
                         <div>
                             <button mat-button matStepperPrevious>Back</button>
