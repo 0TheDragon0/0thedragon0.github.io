@@ -19,4 +19,9 @@ export class AddContentComponent implements OnInit {
     });
   }
 
+  submitContent() {
+    console.log(this.contentForm.value);
+    console.log(this.contentForm.controls.contentBody.value);
+    console.log(this.contentForm.controls.tagsCategories.value);
+  }
 }

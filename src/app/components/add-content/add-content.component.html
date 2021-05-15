@@ -8,7 +8,7 @@
         <div class="add-content-stepper-wrapper horizontal-stepper">
             <mat-horizontal-stepper #stepper="matHorizontalStepper">
                 <form [formGroup]="contentForm">
-                <mat-step [stepControl]="contentForm">
+                    <mat-step [stepControl]="contentForm">
                         <ng-template matStepLabel>Add content</ng-template>
                         <mat-form-field>
                             <input matInput placeholder="Add content" formControlName="contentBody" required>
@@ -16,31 +16,33 @@
                         <div>
                             <button mat-button matStepperNext>Next</button>
                         </div>
-                </mat-step>
-                <mat-step [stepControl]="contentForm">
-                   
+                    </mat-step>
+                    <mat-step [stepControl]="contentForm">
+
                         <ng-template matStepLabel>Add tags & categories</ng-template>
                         <mat-form-field>
-                            <input matInput placeholder="Add tags & categories" formControlName="tagsCategories" required>
+                            <input matInput placeholder="Add tags & categories" formControlName="tagsCategories"
+                                required>
                         </mat-form-field>
                         <div>
                             <button mat-button matStepperPrevious>Back</button>
                             <button mat-button matStepperNext>Next</button>
                         </div>
-                </mat-step>
-                <mat-step>
-                    <ng-template matStepLabel>Preview & Save</ng-template>
-                    You are now done.
-                    <div>
-                        <button mat-button matStepperPrevious>Back</button>
-                        <button mat-button (click)="stepper.reset()">Reset</button>
-                    </div>
-                </mat-step>
-            </form>
+                    </mat-step>
+                    <mat-step>
+                        <ng-template matStepLabel>Preview & Save</ng-template>
+                        You are now done.
+                        <div>
+                            <button mat-button matStepperPrevious>Back</button>
+                            <button mat-button (click)="stepper.reset()">Reset</button>
+                            <button mat-button (click)="submitContent()">Publish</button>
+                        </div>
+                    </mat-step>
+                </form>
             </mat-horizontal-stepper>
         </div>
         <!-- end: Horizontal stepper -->
-        
+
         <!-- start: Vertical stepper -->
         <div class="add-content-stepper-wrapper vertical-stepper">
             <mat-vertical-stepper #stepper="matVerticalStepper">
@@ -59,7 +61,8 @@
                     <form [formGroup]="contentForm">
                         <ng-template matStepLabel>Add tags & categories</ng-template>
                         <mat-form-field>
-                            <input matInput placeholder="Add tags & categories" formControlName="tagsCategories" required>
+                            <input matInput placeholder="Add tags & categories" formControlName="tagsCategories"
+                                required>
                         </mat-form-field>
                         <div>
                             <button mat-button matStepperPrevious>Back</button>
@@ -73,6 +76,7 @@
                     <div>
                         <button mat-button matStepperPrevious>Back</button>
                         <button mat-button (click)="stepper.reset()">Reset</button>
+                        <button mat-button (click)="submitContent()">Publish</button>
                     </div>
                 </mat-step>
             </mat-vertical-stepper>
