@@ -31,8 +31,16 @@
                     </mat-step>
                     <mat-step>
                         <ng-template matStepLabel>Preview & Save</ng-template>
-                        You are now done.
+                        <h4 style="font-style: italic;">You are now done.</h4>
                         <div>
+                            <h4 class="sub-header-4">Content:</h4> 
+                            <div>{{contentForm.controls.contentBody.value}}</div>
+                        </div>
+                        <div>
+                            <h4 class="sub-header-4">Tags & categories</h4>
+                            <div>{{contentForm.controls.tagsCategories.value}}</div>
+                        </div>
+                        <div style="margin-top: 15px;">
                             <button mat-button matStepperPrevious>Back</button>
                             <button mat-button (click)="stepper.reset()">Reset</button>
                             <button mat-button (click)="submitContent()">Publish</button>
@@ -70,8 +78,16 @@
                 </mat-step>
                 <mat-step>
                     <ng-template matStepLabel>Preview & Save</ng-template>
-                    You are now done.
+                    <h4 style="font-style: italic;">You are now done.</h4>
                     <div>
+                        <h4 class="sub-header-4">Content:</h4> 
+                        <div>{{contentForm.controls.contentBody.value}}</div>
+                    </div>
+                    <div>
+                        <h4 class="sub-header-4">Tags & categories</h4>
+                        <div>{{contentForm.controls.tagsCategories.value}}</div>
+                    </div>
+                    <div style="margin-top: 15px;">
                         <button mat-button matStepperPrevious>Back</button>
                         <button mat-button (click)="stepper.reset()">Reset</button>
                         <button mat-button (click)="submitContent()">Publish</button>
