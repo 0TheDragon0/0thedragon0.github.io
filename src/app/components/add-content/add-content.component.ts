@@ -23,5 +23,6 @@ export class AddContentComponent implements OnInit {
     console.log(this.contentForm.value);
     console.log(this.contentForm.controls.contentBody.value);
     console.log(this.contentForm.controls.tagsCategories.value);
+    console.log(this.contentForm);
   }
 }

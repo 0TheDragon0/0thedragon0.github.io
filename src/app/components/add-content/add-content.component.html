@@ -45,9 +45,9 @@
 
         <!-- start: Vertical stepper -->
         <div class="add-content-stepper-wrapper vertical-stepper">
-            <mat-vertical-stepper #stepper="matVerticalStepper">
-                <mat-step [stepControl]="contentForm">
+            <mat-vertical-stepper #stepper="matVerticalStepper"> 
                     <form [formGroup]="contentForm">
+                        <mat-step [stepControl]="contentForm">
                         <ng-template matStepLabel>Add content</ng-template>
                         <mat-form-field>
                             <input matInput placeholder="Add content" formControlName="contentBody" required>
@@ -55,10 +55,9 @@
                         <div>
                             <button mat-button matStepperNext>Next</button>
                         </div>
-                    </form>
+                    
                 </mat-step>
                 <mat-step [stepControl]="contentForm">
-                    <form [formGroup]="contentForm">
                         <ng-template matStepLabel>Add tags & categories</ng-template>
                         <mat-form-field>
                             <input matInput placeholder="Add tags & categories" formControlName="tagsCategories"
@@ -68,7 +67,6 @@
                             <button mat-button matStepperPrevious>Back</button>
                             <button mat-button matStepperNext>Next</button>
                         </div>
-                    </form>
                 </mat-step>
                 <mat-step>
                     <ng-template matStepLabel>Preview & Save</ng-template>
@@ -79,6 +77,7 @@
                         <button mat-button (click)="submitContent()">Publish</button>
                     </div>
                 </mat-step>
+                    </form>
             </mat-vertical-stepper>
         </div>
         <!-- end: Vertical stepper -->
