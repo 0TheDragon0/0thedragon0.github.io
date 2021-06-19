@@ -11,7 +11,7 @@
                     <mat-step [stepControl]="contentForm">
                         <ng-template matStepLabel>Add content</ng-template>
                         <mat-form-field>
-                            <input matInput placeholder="Add content" formControlName="contentBody" required>
+                            <input matInput placeholder="Add content" formControlName="body" required>
                         </mat-form-field>
                         <div>
                             <button mat-button matStepperNext>Next</button>
@@ -21,7 +21,7 @@
 
                         <ng-template matStepLabel>Add tags & categories</ng-template>
                         <mat-form-field>
-                            <input matInput placeholder="Add tags & categories" formControlName="tagsCategories"
+                            <input matInput placeholder="Add tags & categories" formControlName="tags"
                                 required>
                         </mat-form-field>
                         <div>
@@ -34,11 +34,11 @@
                         <h4 style="font-style: italic;">You are now done.</h4>
                         <div>
                             <h4 class="sub-header-4">Content:</h4> 
-                            <div>{{contentForm.controls.contentBody.value}}</div>
+                            <div>{{contentForm.controls.body.value}}</div>
                         </div>
                         <div>
                             <h4 class="sub-header-4">Tags & categories</h4>
-                            <div>{{contentForm.controls.tagsCategories.value}}</div>
+                            <div>{{contentForm.controls.tags.value}}</div>
                         </div>
                         <div style="margin-top: 15px;">
                             <button mat-button matStepperPrevious>Back</button>
@@ -58,7 +58,7 @@
                         <mat-step [stepControl]="contentForm">
                         <ng-template matStepLabel>Add content</ng-template>
                         <mat-form-field>
-                            <input matInput placeholder="Add content" formControlName="contentBody" required>
+                            <input matInput placeholder="Add content" formControlName="body" required>
                         </mat-form-field>
                         <div>
                             <button mat-button matStepperNext>Next</button>
@@ -68,7 +68,7 @@
                 <mat-step [stepControl]="contentForm">
                         <ng-template matStepLabel>Add tags & categories</ng-template>
                         <mat-form-field>
-                            <input matInput placeholder="Add tags & categories" formControlName="tagsCategories"
+                            <input matInput placeholder="Add tags & categories" formControlName="tags"
                                 required>
                         </mat-form-field>
                         <div>
@@ -81,11 +81,11 @@
                     <h4 style="font-style: italic;">You are now done.</h4>
                     <div>
                         <h4 class="sub-header-4">Content:</h4> 
-                        <div>{{contentForm.controls.contentBody.value}}</div>
+                        <div>{{contentForm.controls.body.value}}</div>
                     </div>
                     <div>
                         <h4 class="sub-header-4">Tags & categories</h4>
-                        <div>{{contentForm.controls.tagsCategories.value}}</div>
+                        <div>{{contentForm.controls.tags.value}}</div>
                     </div>
                     <div style="margin-top: 15px;">
                         <button mat-button matStepperPrevious>Back</button>

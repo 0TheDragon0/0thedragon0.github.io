@@ -23,7 +23,10 @@ export class ContentService {
           this.openSnackBar('Content not saved due to an error /:', 'error-snack-bar')
         }
       },
-      (error) => this.openSnackBar('Content not saved due to an error /:', 'error-snack-bar')
+      (error) => {
+        this.openSnackBar('Content not saved due to an error /:', 'error-snack-bar');
+        console.log(error);
+      }
     );
   }
 
